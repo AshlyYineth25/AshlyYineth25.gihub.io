@@ -102,11 +102,23 @@ cursor:pointer;
 #contenido{display:none;}
 .section{padding:40px 20px;}
 
-/* portada */
+/* HERO */
 .hero h1{
 font-family:'Great Vibes',cursive;
 font-size:85px;
 color:#f8c8dc;
+white-space:nowrap;
+}
+
+/* SOLO PARA CELULAR */
+@media(max-width:480px){
+.hero h1{
+font-size:34px;
+}
+}
+
+.hero h2{
+letter-spacing:2px;
 }
 
 /* contador */
@@ -121,8 +133,8 @@ padding:18px;
 border-radius:15px;
 border:1px solid rgba(255,192,203,0.4);
 background:rgba(0,0,0,0.5);
-animation: latido 2s infinite ease-in-out;
-box-shadow: 0 0 10px rgba(212,175,55,0.3);
+animation:latido 2s infinite ease-in-out;
+box-shadow:0 0 10px rgba(212,175,55,0.3);
 }
 .box span{
 font-size:35px;
@@ -240,20 +252,18 @@ document.body.appendChild(b);
 
 <div class="section hero">
 
-<p style="font-style:italic; font-size:28px; font-family:'Playfair Display',serif; color:#d4af37; text-shadow:0 0 10px rgba(212,175,55,0.6);">
+<p style="font-style:italic; font-size:28px; font-family:'Playfair Display',serif; color:#d4af37;">
 Érase una vez...
 </p>
 
-<p style="font-style:italic; font-size:18px; max-width:320px; margin:10px auto; opacity:0.85;">
+<p style="font-style:italic; font-size:18px; max-width:320px; margin:10px auto;">
 En un bosque encantado, iluminado por la luna y el brillo de las luciérnagas,
 una historia mágica está por comenzar...
 </p>
 
 <h2 style="margin-top:25px;">MIS XV AÑOS</h2>
 
-<h1>
-Ashly Yineth Mora Cruz
-</h1>
+<h1>Ashly Yineth Mora Cruz</h1>
 
 <p style="max-width:330px; margin:10px auto;">
 Te invita a ser parte de esta noche llena de encanto,
