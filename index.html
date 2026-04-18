@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>XV Ashly</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+
+<style>
+
+html{scroll-behavior:smooth;}
+
+body{
+margin:0;
+font-family:'Montserrat',sans-serif;
+color:#fff;
+text-align:center;
+
+background:
+linear-gradient(rgba(0,0,0,0.85),rgba(0,0,0,0.95)),
+url("https://images.unsplash.com/photo-1470115636492-6d2b56f9146d?q=80&w=1200");
+
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+}
+
+/* estrellas */
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:#d4af37;
+animation:fall linear infinite;
+opacity:0.7;
+}
+@keyframes fall{
+from{transform:translateY(-10px);}
+to{transform:translateY(100vh);}
+}
+
+/* mariposas */
+.mariposa{
+position:fixed;
+width:18px;
+height:18px;
+pointer-events:none;
+animation:volar linear infinite;
+}
+.mariposa::before,
+.mariposa::after{
+content:"";
+position:absolute;
+width:10px;
+height:14px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+border-radius:50%;
+}
+.mariposa::before{left:0;transform:rotate(-30deg);}
+.mariposa::after{right:0;transform:rotate(30deg);}
+@keyframes volar{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-10vh);}
+}
+
+/* inicio */
+#inicio{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10;
+}
+.card-inicio{
+background:rgba(0,0,0,0.6);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(255,192,203,0.4);
+}
+.btn{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+cursor:pointer;
+}
+
+/* contenido */
+#contenido{display:none;}
+.section{padding:70px 20px;}
+
+/* portada */
+.hero h1{
+font-family:'Great Vibes',cursive;
+font-size:85px;
+color:#f8c8dc;
+}
+
+/* contador */
+.countdown{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+.box{
+padding:18px;
+border-radius:15px;
+border:1px solid rgba(255,192,203,0.4);
+background:rgba(0,0,0,0.5);
+}
+.box span{
+font-size:35px;
+color:#d4af37;
+}
+
+/* tarjetas */
+.card{
+background:rgba(0,0,0,0.55);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+border:1px solid rgba(255,192,203,0.3);
+}
+
+/* COVER */
+.cover-box{
+background:linear-gradient(145deg,rgba(255,192,203,0.15),rgba(0,0,0,0.7));
+border:2px solid #d4af37;
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+box-shadow:0 0 20px rgba(212,175,55,0.4);
+}
+.cover-title{
+font-size:22px;
+font-weight:bold;
+color:#d4af37;
+letter-spacing:2px;
+}
+.cover-text{
+margin-top:10px;
+line-height:1.7;
+}
+
+/* HOSPEDAJE */
+.hospedaje-box{
+background:linear-gradient(145deg,rgba(0,0,0,0.7),rgba(255,192,203,0.1));
+border:2px solid #d4af37;
+box-shadow:0 0 25px rgba(212,175,55,0.4);
+}
+.hospedaje-title{
+font-size:22px;
+font-weight:bold;
+color:#d4af37;
+letter-spacing:2px;
+margin-bottom:10px;
+}
+.hospedaje-precio{
+font-size:18px;
+margin-bottom:10px;
+}
+.hospedaje-precio span{
+color:#f8c8dc;
+font-size:28px;
+font-weight:bold;
+text-shadow:0 0 10px rgba(255,192,203,0.6);
+}
+.hospedaje-info{
+font-size:15px;
+line-height:1.6;
+}
+
+/* botones */
+button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+margin-top:15px;
+cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<script>
+
+/* estrellas */
+for(let i=0;i<40;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"%";
+s.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(s);
+}
+
+/* mariposas */
+for(let i=0;i<12;i++){
+let b=document.createElement("div");
+b.className="mariposa";
+b.style.left=Math.random()*100+"%";
+b.style.animationDuration=(Math.random()*8+8)+"s";
+document.body.appendChild(b);
+}
+
+</script>
+
+<!-- INICIO -->
+<div id="inicio">
+<div class="card-inicio">
+<h2>✨ Invitación Especial ✨</h2>
+<p>Has sido elegid@ para una noche mágica 🌙</p>
+<button class="btn" onclick="abrir()">Ver invitación</button>
+</div>
+</div>
+
+<!-- CONTENIDO -->
+<div id="contenido">
+
+<!-- portada -->
+<div class="section hero">
+<h2>Mis XV Años</h2>
+<h1>Ashly</h1>
+<p>✨ “Hay momentos que marcan tu vida para siempre…”</p>
+</div>
+
+<!-- contador -->
+<div class="section">
+<h2>⏳ Falta muy poco</h2>
+<div class="countdown">
+<div class="box"><span id="d">0</span><br>Días</div>
+<div class="box"><span id="h">0</span><br>Horas</div>
+<div class="box"><span id="m">0</span><br>Min</div>
+<div class="box"><span id="s">0</span><br>Seg</div>
+</div>
+</div>
+
+<!-- invitación -->
+<div class="section">
+<div class="card">
+<p>Hoy dejo atrás mi niñez para comenzar una nueva etapa llena de sueños 💫</p>
+<p>Quiero invitarte a celebrar conmigo este día tan especial ❤️‍🩹</p>
+<h2>👑 Ashly</h2>
+<p>📅 10 de octubre</p>
+<p>⏰ 6:00 pm</p>
+</div>
+</div>
+
+<!-- COVER -->
+<div class="section">
+<div class="cover-box">
+<div class="cover-title">🥂 COVER</div>
+<div class="cover-text">
+Traer bebida de tu preferencia:<br><br>
+🍷 Vino<br>
+🥃 Aguardiente<br>
+🍺 Cerveza<br>
+🥂 Whisky<br>
+✨ O cualquier otro de tu gusto
+</div>
+</div>
+
+<!-- HOSPEDAJE -->
+<div class="card hospedaje-box">
+<div class="hospedaje-title">🏡 HOSPEDAJE</div>
+
+<div class="hospedaje-precio">
+Valor: <span>$50,000</span>
+</div>
+
+<div class="hospedaje-info">
+✨ Incluye piscina los 3 días<br>
+🛏️ Hospedaje 3 días y 2 noches
+</div>
+</div>
+</div>
+
+<!-- ubicación -->
+<div class="section">
+<h2>📍 Finca El Pedregal</h2>
+<button onclick="window.open('https://maps.app.goo.gl/ZunPq5X5GVUq7tMv9')">
+Ver ubicación
+</button>
+</div>
+
+<!-- confirmar -->
+<div class="section">
+<h2>💌 Confirmar asistencia</h2>
+<button onclick="window.open('https://wa.me/573143724448?text=Hola, confirmo mi asistencia a los XV de Ashly ❤️‍🩹')">
+Confirmar
+</button>
+</div>
+
+</div>
+
+<script>
+
+function abrir(){
+document.getElementById("inicio").style.display="none";
+document.getElementById("contenido").style.display="block";
+}
+
+/* contador */
+const fecha=new Date("Oct 10, 2026 18:00:00").getTime();
+
+setInterval(()=>{
+let ahora=new Date().getTime();
+let diff=fecha-ahora;
+
+document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
+document.getElementById("h").innerText=Math.floor((diff/(1000*60*60))%24);
+document.getElementById("m").innerText=Math.floor((diff/(1000*60))%60);
+document.getElementById("s").innerText=Math.floor((diff/1000)%60);
+},1000);
+
+</script>
+
+</body>
+</html>
