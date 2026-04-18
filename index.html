@@ -25,7 +25,7 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* efecto luz de luna */
+/* luz de luna */
 body::after{
 content:"";
 position:fixed;
@@ -121,13 +121,21 @@ padding:18px;
 border-radius:15px;
 border:1px solid rgba(255,192,203,0.4);
 background:rgba(0,0,0,0.5);
+animation: latido 2s infinite ease-in-out;
+box-shadow: 0 0 10px rgba(212,175,55,0.3);
 }
 .box span{
 font-size:35px;
 color:#d4af37;
 }
 
-/* COVER + INFO */
+@keyframes latido{
+0%{transform:scale(1);}
+50%{transform:scale(1.08);}
+100%{transform:scale(1);}
+}
+
+/* cuadros */
 .cover-box{
 background:linear-gradient(145deg,rgba(255,192,203,0.15),rgba(0,0,0,0.7));
 border:2px solid #d4af37;
@@ -150,7 +158,7 @@ line-height:1.6;
 margin:5px 0;
 }
 
-/* HOSPEDAJE */
+/* hospedaje */
 .hospedaje-box{
 background:linear-gradient(145deg,rgba(0,0,0,0.7),rgba(255,192,203,0.1));
 border:2px solid #d4af37;
@@ -166,7 +174,7 @@ color:#d4af37;
 margin-bottom:10px;
 }
 
-/* PRECIO */
+/* precio */
 .precio-cuadro{
 margin-top:20px;
 display:inline-block;
@@ -231,11 +239,27 @@ document.body.appendChild(b);
 <div id="contenido">
 
 <div class="section hero">
-<h2>Mis XV Años</h2>
-<h1>Ashly</h1>
-<p>✨ “Hay momentos que marcan tu vida para siempre…”</p>
-<p>Hoy dejo atrás mi niñez para comenzar una nueva etapa llena de sueños</p>
-<p>Quiero invitarte a celebrar conmigo este día tan especial.</p>
+
+<p style="font-style:italic; font-size:28px; font-family:'Playfair Display',serif; color:#d4af37; text-shadow:0 0 10px rgba(212,175,55,0.6);">
+Érase una vez...
+</p>
+
+<p style="font-style:italic; font-size:18px; max-width:320px; margin:10px auto; opacity:0.85;">
+En un bosque encantado, iluminado por la luna y el brillo de las luciérnagas,
+una historia mágica está por comenzar...
+</p>
+
+<h2 style="margin-top:25px;">MIS XV AÑOS</h2>
+
+<h1>
+Ashly Yineth Mora Cruz
+</h1>
+
+<p style="max-width:330px; margin:10px auto;">
+Te invita a ser parte de esta noche llena de encanto,
+donde la fantasía y la elegancia se encuentran bajo un cielo estrellado
+</p>
+
 </div>
 
 <!-- INFORMACIÓN -->
@@ -246,6 +270,18 @@ document.body.appendChild(b);
 <p>📅 <strong>Fecha:</strong> 10 de octubre del 2026</p>
 <p>🥂 <strong>Recepción:</strong> 6:00 pm a 7:30 pm</p>
 <p>👑 <strong>Ingreso de la princesa:</strong> 8:00 pm</p>
+</div>
+</div>
+</div>
+
+<!-- DRESS CODE -->
+<div class="section">
+<div class="cover-box">
+<div class="cover-title">👗 DRESS CODE</div>
+<div class="cover-text">
+<p><strong>Vestimenta requerida:</strong> <span style="color:#d4af37;">COLOR NEGRO</span></p>
+<p><strong>Hombres:</strong> Vestimenta formal</p>
+<p><strong>Mujeres:</strong> Vestido</p>
 </div>
 </div>
 </div>
@@ -266,8 +302,10 @@ document.body.appendChild(b);
 
 <div class="hospedaje-box">
 <div class="hospedaje-title">🏡 HOSPEDAJE</div>
+<p>“De manera adicional a esta celebración, ¿Te gustaría seguir compartiendo con nosotros los días domingo 11 y lunes 12 de octubre?”</p>
 <p>✨ Incluye piscina los 3 días</p>
 <p>🛏️ Hospedaje 3 días y 2 noches</p>
+<p>COSTO</p>
 
 <div class="precio-cuadro">
 $50,000
@@ -297,7 +335,7 @@ Ver ubicación
 <!-- confirmar -->
 <div class="section">
 <h2>💌 Confirmar asistencia</h2>
-<button onclick="window.open('https://wa.me/573144547311?text=Hola, confirmo mi asistencia a los XV de Ashly ❤️‍🩹')">
+<button onclick="window.open('https://wa.me/573143724448?text=Hola, confirmo mi asistencia a los XV de Ashly ❤️‍🩹')">
 Confirmar
 </button>
 </div>
