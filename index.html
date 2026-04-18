@@ -25,7 +25,7 @@ background-position:center;
 background-attachment:fixed;
 }
 
-/* luz de luna */
+/* luz */
 body::after{
 content:"";
 position:fixed;
@@ -42,7 +42,6 @@ width:2px;
 height:2px;
 background:#d4af37;
 animation:fall linear infinite;
-opacity:0.7;
 }
 @keyframes fall{
 from{transform:translateY(-10px);}
@@ -54,11 +53,9 @@ to{transform:translateY(100vh);}
 position:fixed;
 width:18px;
 height:18px;
-pointer-events:none;
 animation:volar linear infinite;
 }
-.mariposa::before,
-.mariposa::after{
+.mariposa::before,.mariposa::after{
 content:"";
 position:absolute;
 width:10px;
@@ -87,14 +84,14 @@ z-index:10;
 background:rgba(0,0,0,0.6);
 padding:30px;
 border-radius:20px;
-border:1px solid rgba(255,192,203,0.6); /* ROSADO */
+border:1px solid #f8c8dc;
 }
 .btn{
 margin-top:20px;
 padding:12px 25px;
-border:none;
 border-radius:25px;
 background:linear-gradient(45deg,#f8c8dc,#d4af37);
+border:none;
 cursor:pointer;
 }
 
@@ -109,16 +106,8 @@ font-size:85px;
 color:#f8c8dc;
 white-space:nowrap;
 }
-
-/* SOLO CELULAR */
 @media(max-width:480px){
-.hero h1{
-font-size:34px;
-}
-}
-
-.hero h2{
-letter-spacing:2px;
+.hero h1{font-size:34px;}
 }
 
 /* contador */
@@ -131,16 +120,16 @@ flex-wrap:wrap;
 .box{
 padding:18px;
 border-radius:15px;
-border:2px solid #f8c8dc; /* ROSADO */
+border:2px solid #f8c8dc;
 background:rgba(0,0,0,0.5);
-animation:latido 2s infinite ease-in-out;
-box-shadow:0 0 15px rgba(248,200,220,0.4);
+animation:latido 2s infinite;
 }
 .box span{
 font-size:35px;
-color:#d4af37;
+color:#d4af37; /* SE MANTIENE */
 }
 
+/* animación */
 @keyframes latido{
 0%{transform:scale(1);}
 50%{transform:scale(1.08);}
@@ -150,21 +139,14 @@ color:#d4af37;
 /* cuadros */
 .cover-box{
 background:linear-gradient(145deg,rgba(255,192,203,0.15),rgba(0,0,0,0.7));
-border:2px solid #f8c8dc; /* ROSADO */
+border:2px solid #f8c8dc;
 padding:25px;
 border-radius:20px;
-box-shadow:0 0 20px rgba(248,200,220,0.4);
 }
 .cover-title{
 font-size:22px;
+color:#f99aaa; /* CAMBIO */
 font-weight:bold;
-color:#d4af37;
-letter-spacing:2px;
-text-transform:uppercase;
-}
-.cover-text{
-margin-top:10px;
-line-height:1.6;
 }
 .cover-text p{
 margin:5px 0;
@@ -172,48 +154,34 @@ margin:5px 0;
 
 /* hospedaje */
 .hospedaje-box{
-background:linear-gradient(145deg,rgba(0,0,0,0.7),rgba(255,192,203,0.1));
-border:2px solid #f8c8dc; /* ROSADO */
-box-shadow:0 0 25px rgba(248,200,220,0.4);
+border:2px solid #f8c8dc;
 padding:25px;
 border-radius:20px;
-margin-top:20px;
 }
 .hospedaje-title{
 font-size:22px;
+color:#f99aaa; /* CAMBIO */
 font-weight:bold;
-color:#d4af37;
-margin-bottom:10px;
 }
 
 /* precio */
 .precio-cuadro{
-margin-top:20px;
-display:inline-block;
-padding:14px 25px;
-border-radius:12px;
+margin-top:15px;
+padding:12px 20px;
 background:linear-gradient(45deg,#f8c8dc,#d4af37);
 color:#000;
+border-radius:10px;
 font-weight:bold;
-font-size:20px;
-box-shadow:0 0 20px rgba(255,192,203,0.6),
-0 0 35px rgba(212,175,55,0.6);
-animation:brillo 2s infinite;
-}
-@keyframes brillo{
-0%{transform:scale(1);}
-50%{transform:scale(1.05);}
-100%{transform:scale(1);}
 }
 
 /* botones */
 button{
-padding:14px 25px;
+padding:12px 25px;
 border:none;
 border-radius:30px;
 background:linear-gradient(45deg,#f8c8dc,#d4af37);
-margin-top:15px;
 cursor:pointer;
+margin-top:10px;
 }
 
 </style>
@@ -238,7 +206,6 @@ document.body.appendChild(b);
 }
 </script>
 
-<!-- inicio -->
 <div id="inicio">
 <div class="card-inicio">
 <h2>✨ Invitación Especial ✨</h2>
@@ -247,85 +214,43 @@ document.body.appendChild(b);
 </div>
 </div>
 
-<!-- contenido -->
 <div id="contenido">
 
 <div class="section hero">
+<p style="font-style:italic;color:#d4af37;">Érase una vez...</p>
 
-<p style="font-style:italic; font-size:28px; font-family:'Playfair Display',serif; color:#d4af37;">
-Érase una vez...
-</p>
-
-<p style="font-style:italic; font-size:18px; max-width:320px; margin:10px auto;">
-En un bosque encantado, iluminado por la luna y el brillo de las luciérnagas,
-una historia mágica está por comenzar...
-</p>
-
-<h2 style="margin-top:25px;">MIS XV AÑOS</h2>
-
+<h2>MIS XV AÑOS</h2>
 <h1>Ashly Yineth Mora Cruz</h1>
 
-<p style="max-width:330px; margin:10px auto;">
-Te invita a ser parte de esta noche llena de encanto,
-donde la fantasía y la elegancia se encuentran bajo un cielo estrellado
-</p>
-
+<p>Te invita a una noche mágica ✨</p>
 </div>
 
-<!-- INFORMACIÓN -->
 <div class="section">
 <div class="cover-box">
 <div class="cover-title">📖 INFORMACIÓN</div>
-<div class="cover-text">
-<p>📅 <strong>Fecha:</strong> 10 de octubre del 2026</p>
-<p>🥂 <strong>Recepción:</strong> 6:00 pm a 7:30 pm</p>
-<p>👑 <strong>Ingreso de la princesa:</strong> 8:00 pm</p>
-</div>
-</div>
+<p>📅 10 de octubre del 2026</p>
+<p>🥂 6:00 pm a 7:30 pm</p>
+<p>👑 8:00 pm</p>
 </div>
 
-<!-- DRESS CODE -->
-<div class="section">
 <div class="cover-box">
 <div class="cover-title">👗 DRESS CODE</div>
-<div class="cover-text">
-<p><strong>Vestimenta requerida:</strong> <span style="color:#d4af37;">COLOR NEGRO</span></p>
-<p><strong>Hombres:</strong> Vestimenta formal</p>
-<p><strong>Mujeres:</strong> Vestido</p>
-</div>
-</div>
+<p>Negro obligatorio</p>
 </div>
 
-<!-- COVER -->
-<div class="section">
 <div class="cover-box">
 <div class="cover-title">🥂 COVER</div>
-<div class="cover-text">
-<p>Traer bebida de tu preferencia:</p>
-<p>🍷 Vino</p>
-<p>🥃 Aguardiente</p>
-<p>🍺 Cerveza</p>
-<p>🥂 Whisky</p>
-<p>✨ O cualquier otro de tu gusto</p>
-</div>
+<p>Traer bebida</p>
 </div>
 
 <div class="hospedaje-box">
 <div class="hospedaje-title">🏡 HOSPEDAJE</div>
-<p>“De manera adicional a esta celebración, ¿Te gustaría seguir compartiendo con nosotros los días domingo 11 y lunes 12 de octubre?”</p>
-<p>✨ Incluye piscina los 3 días</p>
-<p>🛏️ Hospedaje 3 días y 2 noches</p>
-<p>COSTO</p>
-
-<div class="precio-cuadro">
-$50,000
-</div>
+<p>Incluye piscina</p>
+<div class="precio-cuadro">$50,000</div>
 </div>
 </div>
 
-<!-- contador -->
 <div class="section">
-<h2>⏳ Falta muy poco</h2>
 <div class="countdown">
 <div class="box"><span id="d">0</span><br>Días</div>
 <div class="box"><span id="h">0</span><br>Horas</div>
@@ -334,41 +259,13 @@ $50,000
 </div>
 </div>
 
-<!-- ubicación -->
-<div class="section">
-<h2>📍 Finca El Pedregal</h2>
-<button onclick="window.open('https://maps.app.goo.gl/ZunPq5X5GVUq7tMv9')">
-Ver ubicación
-</button>
-</div>
-
-<!-- confirmar -->
-<div class="section">
-<h2>💌 Confirmar asistencia</h2>
-<button onclick="window.open('https://wa.me/573143724448?text=Hola, confirmo mi asistencia a los XV de Ashly ❤️‍🩹')">
-Confirmar
-</button>
-</div>
-
 </div>
 
 <script>
 function abrir(){
-document.getElementById("inicio").style.display="none";
-document.getElementById("contenido").style.display="block";
+inicio.style.display="none";
+contenido.style.display="block";
 }
-
-const fecha=new Date("Oct 10, 2026 18:00:00").getTime();
-
-setInterval(()=>{
-let ahora=new Date().getTime();
-let diff=fecha-ahora;
-
-document.getElementById("d").innerText=Math.floor(diff/(1000*60*60*24));
-document.getElementById("h").innerText=Math.floor((diff/(1000*60*60))%24);
-document.getElementById("m").innerText=Math.floor((diff/(1000*60))%60);
-document.getElementById("s").innerText=Math.floor((diff/1000)%60);
-},1000);
 </script>
 
 </body>
