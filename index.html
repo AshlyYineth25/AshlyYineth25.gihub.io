@@ -1,48 +1,589 @@
-<div style="max-width:340px; margin:20px auto; line-height:1.8;">
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p style="font-size:17px;">
-Te invita a compartir una noche llena de encanto, donde la fantasía y la elegancia se unen bajo un cielo estrellado.
-</p>
+<title>XV Ashly</title>
 
-<p style="margin-top:20px; font-size:16px;">
-Con profundo amor y gratitud, agradezco a quienes con ternura, cuidado y sueños hicieron posible el inicio de este hermoso camino.
-</p>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
 
-<div style="margin-top:28px;">
+<style>
 
-<p style="
-font-family:'Playfair Display',serif;
-font-size:30px;
-color:#f8c8dc;
+html{
+scroll-behavior:smooth;
+}
+
+body{
 margin:0;
-font-weight:600;
-letter-spacing:1px;
-">
-Arnoby Mora
-</p>
+font-family:'Montserrat',sans-serif;
+color:#fff;
+text-align:center;
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("fondo.png");
+background-size:cover;
+background-position:center;
+background-attachment:fixed;
+overflow-x:hidden;
+}
 
-<p style="
-font-family:'Playfair Display',serif;
-font-size:30px;
-color:#f8c8dc;
-margin-top:5px;
-font-weight:600;
-letter-spacing:1px;
-">
-Amparo Cruz
-</p>
+/* luz de luna */
+body::after{
+content:"";
+position:fixed;
+width:100%;
+height:100%;
+background:radial-gradient(circle at 70% 20%, rgba(255,255,255,0.15), transparent 60%);
+pointer-events:none;
+}
 
-</div>
+/* estrellas */
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:#d4af37;
+animation:fall linear infinite;
+opacity:0.7;
+}
 
-<p style="
-margin-top:25px;
+@keyframes fall{
+from{
+transform:translateY(-10px);
+}
+to{
+transform:translateY(100vh);
+}
+}
+
+/* mariposas */
+.mariposa{
+position:fixed;
+width:18px;
+height:18px;
+pointer-events:none;
+animation:volar linear infinite;
+}
+
+.mariposa::before,
+.mariposa::after{
+content:"";
+position:absolute;
+width:10px;
+height:14px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+border-radius:50%;
+}
+
+.mariposa::before{
+left:0;
+transform:rotate(-30deg);
+}
+
+.mariposa::after{
+right:0;
+transform:rotate(30deg);
+}
+
+@keyframes volar{
+0%{
+transform:translateY(100vh);
+}
+100%{
+transform:translateY(-10vh);
+}
+}
+
+/* inicio */
+#inicio{
+position:fixed;
+width:100%;
+height:100%;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:10;
+background:rgba(0,0,0,0.6);
+}
+
+.card-inicio{
+background:rgba(0,0,0,0.6);
+padding:30px;
+border-radius:20px;
+border:1px solid rgba(249,154,170,0.5);
+backdrop-filter:blur(5px);
+}
+
+.btn{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+border-radius:25px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:scale(1.05);
+}
+
+/* contenido */
+#contenido{
+display:none;
+}
+
+.section{
+padding:40px 20px;
+}
+
+/* HERO */
+.hero h1{
 font-family:'Great Vibes',cursive;
+font-size:85px;
+color:#f8c8dc;
+white-space:nowrap;
+margin:10px 0;
+}
+
+@media(max-width:480px){
+.hero h1{
 font-size:34px;
+white-space:normal;
+}
+}
+
+.hero h2{
+letter-spacing:2px;
+}
+
+/* contador */
+.countdown{
+display:flex;
+justify-content:center;
+gap:12px;
+flex-wrap:wrap;
+}
+
+.box{
+padding:18px;
+border-radius:15px;
+border:1px solid #f99aaa;
+background:rgba(0,0,0,0.5);
+animation:latido 2s infinite ease-in-out;
+box-shadow:0 0 10px rgba(249,154,170,0.3);
+min-width:80px;
+}
+
+.box span{
+font-size:35px;
 color:#d4af37;
-line-height:1.4;
-text-shadow:0 0 10px rgba(212,175,55,0.5);
-">
-✨ Entre destellos dorados, un nuevo capítulo comienza a brillar... ✨
+font-weight:bold;
+}
+
+@keyframes latido{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.08);
+}
+100%{
+transform:scale(1);
+}
+}
+
+/* cuadros */
+.cover-box{
+background:linear-gradient(145deg,rgba(255,192,203,0.15),rgba(0,0,0,0.7));
+border:2px solid #f99aaa;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(249,154,170,0.4);
+max-width:500px;
+margin:auto;
+}
+
+.cover-title{
+font-size:22px;
+font-weight:bold;
+color:#f99aaa;
+letter-spacing:2px;
+text-transform:uppercase;
+}
+
+.cover-text{
+margin-top:10px;
+line-height:1.6;
+}
+
+.cover-text p{
+margin:5px 0;
+}
+
+/* hospedaje */
+.hospedaje-box{
+background:linear-gradient(145deg,rgba(0,0,0,0.7),rgba(255,192,203,0.1));
+border:2px solid #f99aaa;
+box-shadow:0 0 25px rgba(249,154,170,0.4);
+padding:25px;
+border-radius:20px;
+margin-top:20px;
+max-width:500px;
+margin-left:auto;
+margin-right:auto;
+}
+
+.hospedaje-title{
+font-size:22px;
+font-weight:bold;
+color:#f99aaa;
+margin-bottom:10px;
+}
+
+/* precio */
+.precio-cuadro{
+margin-top:20px;
+display:inline-block;
+padding:14px 25px;
+border-radius:12px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+color:#000;
+font-weight:bold;
+font-size:20px;
+box-shadow:
+0 0 20px rgba(255,192,203,0.6),
+0 0 35px rgba(212,175,55,0.6);
+animation:brillo 2s infinite;
+}
+
+@keyframes brillo{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.05);
+}
+100%{
+transform:scale(1);
+}
+}
+
+/* botones */
+button{
+padding:14px 25px;
+border:none;
+border-radius:30px;
+background:linear-gradient(45deg,#f8c8dc,#d4af37);
+margin-top:15px;
+cursor:pointer;
+font-weight:bold;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.05);
+}
+
+/* botón música */
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+width:55px;
+height:55px;
+border-radius:50%;
+font-size:22px;
+z-index:100;
+box-shadow:0 0 15px rgba(255,192,203,0.6);
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- AUDIO -->
+<audio id="musica" loop>
+<source src="cancion.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+
+/* estrellas */
+for(let i=0;i<40;i++){
+let s=document.createElement("div");
+s.className="star";
+s.style.left=Math.random()*100+"%";
+s.style.animationDuration=(Math.random()*5+5)+"s";
+document.body.appendChild(s);
+}
+
+/* mariposas */
+for(let i=0;i<12;i++){
+let b=document.createElement("div");
+b.className="mariposa";
+b.style.left=Math.random()*100+"%";
+b.style.animationDuration=(Math.random()*8+8)+"s";
+document.body.appendChild(b);
+}
+
+</script>
+
+<!-- inicio -->
+<div id="inicio">
+
+<div class="card-inicio">
+
+<h2>✨ Invitación Especial ✨</h2>
+
+<p>
+Has sido elegid@ para una noche mágica 🌙
 </p>
 
+<button class="btn" onclick="abrir()">
+Ver invitación
+</button>
+
 </div>
+
+</div>
+
+<!-- contenido -->
+<div id="contenido">
+
+<div class="section hero">
+
+<p style="font-style:italic; font-size:28px; font-family:'Playfair Display',serif; color:#d4af37;">
+Érase una vez...
+</p>
+
+<p style="font-style:italic; font-size:18px; max-width:320px; margin:10px auto;">
+En un bosque encantado, iluminado por la luna y el brillo de las luciernagas, una historia magica esta por comenzar.
+</p>
+
+<h2 style="margin-top:25px;">
+MIS XV AÑOS
+</h2>
+
+<h1>
+Ashly Yineth Mora Cruz
+</h1>
+
+<p style="max-width:330px; margin:10px auto;">
+Te invita a compartir una noche llena de encanto, donde la fantasia y la elegancia se unen bajo un cielo estrellado.
+  
+Con profundo amor y gratitud, Agradezco a quienes con 
+Ternura, Cuidado y sueños hicieron posible el inicio
+De este hermoso camino: Arnoby Mora y Amparo Cruz.
+
+Entre destellos dorados, un nuevo capitulo comienza a brillar...
+</p>
+  
+
+</div>
+
+<!-- INFORMACIÓN -->
+<div class="section">
+
+<div class="cover-box">
+
+<div class="cover-title">
+📖 INFORMACIÓN
+</div>
+
+<div class="cover-text">
+<p>📅 <strong>Fecha:</strong> 10 de octubre del 2026</p>
+<p>🥂 <strong>Recepción:</strong> 6:00 pm a 7:30 pm</p>
+<p>👑 <strong>Ingreso de la princesa:</strong> 8:00 pm</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- DRESS CODE -->
+<div class="section">
+
+<div class="cover-box">
+
+<div class="cover-title">
+👗 DRESS CODE
+</div>
+
+<div class="cover-text">
+<p><strong>Vestuario requerido:</strong> <span style="color:#f99aaa;">COLOR NEGRO</span></p>
+<p><strong>Vestimenta formal</strong>
+<p>( Recuerda que este evento se organizara en una finca, Llevar vestimenta comoda, elegante. )</p>
+</div>
+
+</div>
+
+</div>
+
+<!-- COVER -->
+<div class="section">
+
+<div class="cover-box">
+
+<div class="cover-title">
+🥂 COVER
+</div>
+
+<div class="cover-text">
+<p>Traer bebida de tu preferencia:</p>
+<p>🍷 Vino</p>
+<p>🥃 Aguardiente</p>
+<p>🍺 Cerveza</p>
+<p>🥂 Whisky</p>
+<p>✨ O cualquier otro de tu gusto</p>
+</div>
+
+</div>
+
+<div class="hospedaje-box">
+
+<div class="hospedaje-title">
+🏡 HOSPEDAJE
+</div>
+
+<p>
+“De manera adicional a esta celebración,
+¿Te gustaría seguir compartiendo con nosotros
+los días domingo 11 y lunes 12 de octubre?”
+</p>
+
+<p>✨ Incluye piscina los 3 días</p>
+<p>🛏️ Hospedaje 3 días y 2 noches</p>
+
+<p>COSTO</p>
+
+<div class="precio-cuadro">
+$50,000
+</div>
+
+</div>
+
+</div>
+
+<!-- contador -->
+<div class="section">
+
+<h2>
+⏳ Falta muy poco
+</h2>
+
+<div class="countdown">
+
+<div class="box">
+<span id="d">0</span><br>Días
+</div>
+
+<div class="box">
+<span id="h">0</span><br>Horas
+</div>
+
+<div class="box">
+<span id="m">0</span><br>Min
+</div>
+
+<div class="box">
+<span id="s">0</span><br>Seg
+</div>
+
+</div>
+
+</div>
+
+<!-- ubicación -->
+<div class="section">
+
+<h2>
+📍 Finca El Pedregal
+</h2>
+
+<button onclick="window.open('https://maps.app.goo.gl/ZunPq5X5GVUq7tMv9')">
+Ver ubicación
+</button>
+
+</div>
+
+<!-- confirmar -->
+<div class="section">
+
+<h2>
+💌 Confirmar asistencia
+</h2>
+
+<button onclick="window.open('https://wa.me/573143724448?text=Hola, confirmo mi asistencia a los XV de Ashly ❤️‍🩹')">
+Confirmar
+</button>
+
+</div>
+
+</div>
+
+<!-- botón música -->
+<button class="music-btn" onclick="toggleMusic()">
+🎵
+</button>
+
+<script>
+
+/* abrir invitación */
+function abrir(){
+
+document.getElementById("inicio").style.display="none";
+document.getElementById("contenido").style.display="block";
+
+const musica=document.getElementById("musica");
+
+musica.volume=0.4;
+
+musica.play();
+
+}
+
+/* pausar/reanudar música */
+function toggleMusic(){
+
+const musica=document.getElementById("musica");
+
+if(musica.paused){
+musica.play();
+}else{
+musica.pause();
+}
+
+}
+
+/* contador */
+const fecha=new Date("Oct 10, 2026 18:00:00").getTime();
+
+setInterval(()=>{
+
+let ahora=new Date().getTime();
+
+let diff=fecha-ahora;
+
+document.getElementById("d").innerText=
+Math.floor(diff/(1000*60*60*24));
+
+document.getElementById("h").innerText=
+Math.floor((diff/(1000*60*60))%24);
+
+document.getElementById("m").innerText=
+Math.floor((diff/(1000*60))%60);
+
+document.getElementById("s").innerText=
+Math.floor((diff/1000)%60);
+
+},1000);
+
+</script>
+
+</body>
+</html>
